@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1F4EC5CC-2DF3-487F-A0A9-DD6DC56A7097}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EmgucvDemo</RootNamespace>
+    <AssemblyName>EmgucvDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Emgu.CV.UI, Version=3.2.0.2682, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Emgu\emgucv-windesktop 3.3.0.2824\bin\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.World, Version=3.2.0.2682, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Emgu\emgucv-windesktop 3.3.0.2824\bin\Emgu.CV.World.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Emgu\emgucv-windesktop 3.3.0.2824\bin\ZedGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing, Version=0.16.0.0, Culture=neutral, PublicKeyToken=830ae994e36ac27d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\zxing.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form\FormBackProjection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormBackProjection.Designer.cs">
+      <DependentUpon>FormBackProjection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormBinary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormBinary.Designer.cs">
+      <DependentUpon>FormBinary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormCalibration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormCalibration.designer.cs">
+      <DependentUpon>FormCalibration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormCameraCali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormCameraCali.Designer.cs">
+      <DependentUpon>FormCameraCali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormCapture .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormCapture .Designer.cs">
+      <DependentUpon>FormCapture .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormCircle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormCircle.Designer.cs">
+      <DependentUpon>FormCircle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormCorner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormCorner.Designer.cs">
+      <DependentUpon>FormCorner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormDFT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormDFT.Designer.cs">
+      <DependentUpon>FormDFT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormExtract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormExtract.Designer.cs">
+      <DependentUpon>FormExtract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormFilter.Designer.cs">
+      <DependentUpon>FormFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormFloodFill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormFloodFill.Designer.cs">
+      <DependentUpon>FormFloodFill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormHistogram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormHistogram.Designer.cs">
+      <DependentUpon>FormHistogram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormHough.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormHough.Designer.cs">
+      <DependentUpon>FormHough.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormHull.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormHull.Designer.cs">
+      <DependentUpon>FormHull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormMorphology.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormMorphology.Designer.cs">
+      <DependentUpon>FormMorphology.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormOCR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormOCR.Designer.cs">
+      <DependentUpon>FormOCR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormColor.Designer.cs">
+      <DependentUpon>FormColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormRemap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormRemap.Designer.cs">
+      <DependentUpon>FormRemap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormROI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormROI.Designer.cs">
+      <DependentUpon>FormROI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormStitching.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormStitching.Designer.cs">
+      <DependentUpon>FormStitching.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormWarpPerspective.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormWarpPerspective.Designer.cs">
+      <DependentUpon>FormWarpPerspective.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormPyramid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormPyramid.Designer.cs">
+      <DependentUpon>FormPyramid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormTemplateMatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormTemplateMatch.Designer.cs">
+      <DependentUpon>FormTemplateMatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormWarpAffine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormWarpAffine.Designer.cs">
+      <DependentUpon>FormWarpAffine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormQRCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormQRCode.Designer.cs">
+      <DependentUpon>FormQRCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LicensePlateRecognition\FormLicensePlate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LicensePlateRecognition\FormLicensePlate.Designer.cs">
+      <DependentUpon>FormLicensePlate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LicensePlateRecognition\LicensePlateDetector.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Form\FormContour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormContour.designer.cs">
+      <DependentUpon>FormContour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormAbsDiff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormAbsDiff.designer.cs">
+      <DependentUpon>FormAbsDiff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormEdge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormEdge.designer.cs">
+      <DependentUpon>FormEdge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormEqualizeHist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormEqualizeHist.designer.cs">
+      <DependentUpon>FormEqualizeHist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormBlob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormBlob.designer.cs">
+      <DependentUpon>FormBlob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="特征点\DrawMatches.cs" />
+    <Compile Include="特征点\FormFeature.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="特征点\FormFeature.designer.cs">
+      <DependentUpon>FormFeature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormImageSegment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormImageSegment.Designer.cs">
+      <DependentUpon>FormImageSegment.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form\FormBackProjection.resx">
+      <DependentUpon>FormBackProjection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormBinary.resx">
+      <DependentUpon>FormBinary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormCalibration.resx">
+      <DependentUpon>FormCalibration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormCameraCali.resx">
+      <DependentUpon>FormCameraCali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormCapture .resx">
+      <DependentUpon>FormCapture .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormCircle.resx">
+      <DependentUpon>FormCircle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormCorner.resx">
+      <DependentUpon>FormCorner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormDFT.resx">
+      <DependentUpon>FormDFT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormExtract.resx">
+      <DependentUpon>FormExtract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormFilter.resx">
+      <DependentUpon>FormFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormFloodFill.resx">
+      <DependentUpon>FormFloodFill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormHistogram.resx">
+      <DependentUpon>FormHistogram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormHough.resx">
+      <DependentUpon>FormHough.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormHull.resx">
+      <DependentUpon>FormHull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormMorphology.resx">
+      <DependentUpon>FormMorphology.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormOCR.resx">
+      <DependentUpon>FormOCR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormColor.resx">
+      <DependentUpon>FormColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormPyramid.resx">
+      <DependentUpon>FormPyramid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormRemap.resx">
+      <DependentUpon>FormRemap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormROI.resx">
+      <DependentUpon>FormROI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormStitching.resx">
+      <DependentUpon>FormStitching.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormTemplateMatch.resx">
+      <DependentUpon>FormTemplateMatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormWarpAffine.resx">
+      <DependentUpon>FormWarpAffine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormWarpPerspective.resx">
+      <DependentUpon>FormWarpPerspective.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormQRCode.resx">
+      <DependentUpon>FormQRCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LicensePlateRecognition\FormLicensePlate.resx">
+      <DependentUpon>FormLicensePlate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Form\FormContour.resx">
+      <DependentUpon>FormContour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormAbsDiff.resx">
+      <DependentUpon>FormAbsDiff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormEdge.resx">
+      <DependentUpon>FormEdge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormEqualizeHist.resx">
+      <DependentUpon>FormEqualizeHist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormBlob.resx">
+      <DependentUpon>FormBlob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="特征点\FormFeature.resx">
+      <DependentUpon>FormFeature.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormImageSegment.resx">
+      <DependentUpon>FormImageSegment.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxBTNENHLib4">
+      <Guid>{40B5CE80-C5A8-11D2-8183-00002440DFD8}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="BTNENHLib4">
+      <Guid>{40B5CE80-C5A8-11D2-8183-00002440DFD8}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
