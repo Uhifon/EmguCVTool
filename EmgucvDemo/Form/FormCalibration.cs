@@ -13,7 +13,7 @@ namespace EmgucvDemo
         Image<Bgr, byte> imag;
         PointF[] points_camera = new PointF[9];
         PointF[] points_robot = new PointF[9];
-      
+
         double A;
         double B;
         double C;
@@ -32,7 +32,7 @@ namespace EmgucvDemo
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            imag = new Image<Bgr, byte>(@"E:\视觉\学习代码\标定\圆1.png");
+            imag = new Image<Bgr, byte>("圆.jpg");
             imageBox1.Image = imag;
         }
 
@@ -45,8 +45,8 @@ namespace EmgucvDemo
             int minRadius = Convert.ToInt32(numericUpDown3.Value);
             int maxRadius = Convert.ToInt32(numericUpDown4.Value);
             CircleF[] circles = CvInvoke.HoughCircles(image_gray, HoughType.Gradient, 1.01, 80.0, cannyThreshold, circleAccumulatorThreshold, minRadius, maxRadius);
-            if (circles.Length != 9)
-                return;
+            //if (circles.Length != 9)
+            //    return;
             Mat circleImage = new Mat(image_gray.Size, DepthType.Cv8U, 3);
             circleImage.SetTo(new MCvScalar(0));
 
@@ -118,10 +118,10 @@ namespace EmgucvDemo
                 points_camera[num - 1].Y = Convert.ToSingle(tb4.Text);
             }
 
-            calrobot();
+            CalRobot();
             textBox_a.Text = A.ToString();
-            textBox_b.Text =B.ToString();
-            textBox_c.Text =C.ToString();
+            textBox_b.Text = B.ToString();
+            textBox_c.Text = C.ToString();
             textBox_d.Text = D.ToString();
             textBox_e.Text = E.ToString();
             textBox_f.Text = F.ToString();
@@ -163,21 +163,23 @@ namespace EmgucvDemo
             textBox_roboty.Text = _p.Y.ToString();
         }
 
-    
 
 
-        private void calrobot()
+
+        private void CalRobot()
         {
             Mat warpMat;
-            warpMat = CvInvoke.EstimateRigidTransform(points_camera, points_robot,true );
+            warpMat = CvInvoke.EstimateAffine2D(points_camera, points_robot);    //4.0
+        //    warpMat = CvInvoke.EstimateRigidTransform(points_camera, points_robot, true);  //3.0
             Image<Gray, float> img = warpMat.ToImage<Gray, float>();
-             A = img.Data[0, 0, 0];
-             B = img.Data[0, 1, 0];
-             C = img.Data[0, 2, 0];
-             D = img.Data[1, 0, 0];
-             E = img.Data[1, 1, 0];
-             F = img.Data[1, 2, 0];
+            A = img.Data[0, 0, 0];
+            B = img.Data[0, 1, 0];
+            C = img.Data[0, 2, 0];
+            D = img.Data[1, 0, 0];
+            E = img.Data[1, 1, 0];
+            F = img.Data[1, 2, 0];
         }
+
         public PointF TransformPoint(PointF pPoint)
         {
             //********************************************            

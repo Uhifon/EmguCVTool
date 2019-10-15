@@ -67,7 +67,7 @@ namespace EmgucvDemo
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Stitcher _sticher = new Stitcher(false);//创建一个 Sticher 类。
+            Stitcher _sticher = new Stitcher(Stitcher.Mode.Scans);//创建一个 Sticher 类。
             Mat result_image = new Mat();//创建 Mat 存储输出全景图
             VectorOfMat sti_image = new VectorOfMat();//创建 VectorOfMat 类型， 输入图像拼接数组
             // 添加图像到 sti_image 中， 不按照循序进行添加， 说明拼接图像与顺序无关*//

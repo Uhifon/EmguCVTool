@@ -9,6 +9,8 @@ using Emgu.CV.Util;
 using ZXing;
 using ZXing.QrCode;
 using System.Drawing.Imaging;
+using Emgu.CV.OCR;
+
 
 namespace EmgucvDemo
 {
@@ -154,9 +156,21 @@ namespace EmgucvDemo
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            Bitmap map = image.Bitmap;
-             richTextBox1.Text =  Read1(map);
+            // Bitmap map = image.Bitmap;
+           //  richTextBox1.Text =  Read1(map);                   //利用zxing识别
+            richTextBox1.Text = RecongizeQRCode(image);   //利用opencv4.0识别
         }
+
+        private string  RecongizeQRCode(Mat mat)
+        {
+            Mat dstMat =new Mat();
+            QRCodeDetector QRdetecter=new QRCodeDetector();
+            bool res=    QRdetecter.Detect(mat, dstMat);  //检测
+            string str = QRdetecter.Decode(mat, dstMat);  //解码
+            return str; 
+        }
+
+
 
         /// <summary>
         /// 读取二维码

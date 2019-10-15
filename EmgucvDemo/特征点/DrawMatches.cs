@@ -11,6 +11,7 @@ using Emgu.CV.Flann;
 using Emgu.CV.Structure;
 using Emgu.CV.Util;
 using Emgu.CV.XFeatures2D;
+using System.Linq;
 
 namespace EmgucvDemo
 {
@@ -56,9 +57,11 @@ namespace EmgucvDemo
                     // Calculate score based on matches size
                     // ---------------------------------------------->
                     score = 0;
+                    float[] copyArray = new float[5];
+                    mask.GetData().CopyTo(copyArray,0);
                     for (int i = 0; i < matches.Size; i++)
                     {
-                        if (mask.GetData(i)[0] == 0) continue;
+                        if (copyArray[0] == 0) continue;
                         foreach (var e in matches[i].ToArray())
                             ++score;
                     }

@@ -66,7 +66,8 @@ namespace EmgucvDemo
             for (int i = 0; i < contours.Size; i++)//遍历每个连通域。
             {
                 VectorOfPoint contour = contours[i];
-                MCvMoments moment = CvInvoke.Moments(contour);//获得连通域的矩
+
+                Moments moment = CvInvoke.Moments(contour);//获得连通域的矩
                 Point p = new Point((int)(moment.M10 / moment.M00), (int)(moment.M01 / moment.M00));// 获得连通域的中心
                 CvInvoke.Rectangle(scr, new Rectangle(p, temp.Size), new MCvScalar(0, 0, 255), 4);//绘制匹配区域。
             }
