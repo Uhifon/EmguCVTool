@@ -66,7 +66,7 @@ namespace EmgucvDemo
 
         }
 
-        private void AddLabelAndImage(ref Point startPoint, String labelText, IImage image)
+        private void AddLabelAndImage(ref Point startPoint, String labelText, Mat image)
         {
             Label label = new Label();
             panel1.Controls.Add(label);

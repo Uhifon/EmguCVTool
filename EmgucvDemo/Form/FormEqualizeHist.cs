@@ -46,7 +46,8 @@ namespace EmgucvDemo
 
         private void button3_Click(object sender, EventArgs e)
         {
-            imageBox2.Image.Save(@"1.bmp");
+            CvInvoke.Imwrite(@"1.bmp", imageBox2.Image);
+  
         }
     }
 }
